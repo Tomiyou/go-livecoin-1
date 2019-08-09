@@ -10,9 +10,9 @@ import (
 	"log"
 	"net/http"
 	"net/http/httputil"
+	"net/url"
 	"strings"
 	"time"
-	"net/url"
 )
 
 type client struct {
@@ -131,7 +131,7 @@ func (c *client) do(method string, ressource string, payload map[string]string, 
 		return
 	}
 	if method == "POST" || method == "PUT" {
-		req.Header.Add("Content-Type", "application/json;charset=utf-8")
+		req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 	}
 	req.Header.Add("Accept", "application/json")
 
