@@ -2,18 +2,19 @@ package livecoin
 
 import (
 	"encoding/json"
+	"github.com/shopspring/decimal"
 	"time"
 )
 
 type Trade struct {
-	Id            uint64    `json:"id"`
-	ClientOrderId uint64    `json:"clientorderid"`
-	Type          string    `json:"type"`
-	Symbol        string    `json:"symbol"`
-	Date          time.Time `json:"datetime"`
-	Price         float64   `json:"price"`
-	Quantity      float64   `json:"quantity"`
-	Commission    float64   `json:"commission"`
+	Id            uint64          `json:"id"`
+	ClientOrderId uint64          `json:"clientorderid"`
+	Type          string          `json:"type"`
+	Symbol        string          `json:"symbol"`
+	Date          time.Time       `json:"datetime"`
+	Price         decimal.Decimal `json:"price"`
+	Quantity      decimal.Decimal `json:"quantity"`
+	Commission    decimal.Decimal `json:"commission"`
 }
 
 func (t *Trade) UnmarshalJSON(data []byte) error {

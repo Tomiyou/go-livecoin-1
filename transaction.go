@@ -2,20 +2,21 @@ package livecoin
 
 import (
 	"encoding/json"
+	"github.com/shopspring/decimal"
 	"time"
 )
 
 type Transaction struct {
-	Id            string    `json:"id"`
-	Type          string    `json:"type"`
-	Date          time.Time `json:"date"`
-	Amount        float64   `json:"amount"`
-	Fee           float64   `json:"fee"`
-	FixedCurrency string    `json:"fixedCurrency"`
-	TaxCurrency   string    `json:"taxCurrency"`
-	External      string    `json:"external"`
-	ExternalKey   string    `json:"externalKey"`
-	Login         string    `json:"login"`
+	Id            string          `json:"id"`
+	Type          string          `json:"type"`
+	Date          time.Time       `json:"date"`
+	Amount        decimal.Decimal `json:"amount"`
+	Fee           decimal.Decimal `json:"fee"`
+	FixedCurrency string          `json:"fixedCurrency"`
+	TaxCurrency   string          `json:"taxCurrency"`
+	External      string          `json:"external"`
+	ExternalKey   string          `json:"externalKey"`
+	Login         string          `json:"login"`
 }
 
 func (t *Transaction) UnmarshalJSON(data []byte) error {
