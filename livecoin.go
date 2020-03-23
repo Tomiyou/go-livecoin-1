@@ -5,11 +5,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/shopspring/decimal"
 	"net/http"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/shopspring/decimal"
 )
 
 const (
@@ -321,5 +322,47 @@ func (b *Livecoin) GetRestrictions() (restrictions Restrictions, err error) {
 		return
 	}
 	err = json.Unmarshal(r, &restrictions)
+	return
+}
+
+// GetDepositAddress is used to get the deposit address for a specific currency
+func (b *Livecoin) GetDepositAddress(currency string) (address DepositAddress, err error) {
+	payload := map[string]string{
+		"currency": currency,
+	}
+	r, err := b.client.do("GET", "payment/get/address", payload, true)
+	if err != nil {
+		return
+	}
+	var response interface{}
+	if err = json.Unmarshal(r, &response); err != nil {
+		return
+	}
+	if err = handleErr(response); err != nil {
+		return
+	}
+	err = json.Unmarshal(r, &address)
+	return
+}
+
+// Withdraw is used to place a sell order (limit) for a specified currency pair.
+func (b *Livecoin) Withdraw(wallet, currency string, quantity decimal.Decimal) (withdrawal Withdrawal, err error) {
+	payload := map[string]string{
+		"currency": currency,
+		"wallet":   wallet,
+		"amount":   fmt.Sprintf("%s", quantity),
+	}
+	r, err := b.client.do("POST", "payment/out/coin", payload, true)
+	if err != nil {
+		return
+	}
+	var response interface{}
+	if err = json.Unmarshal(r, &response); err != nil {
+		return
+	}
+	if err = handleErr(response); err != nil {
+		return
+	}
+	err = json.Unmarshal(r, &withdrawal)
 	return
 }
