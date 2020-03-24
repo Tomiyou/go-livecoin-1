@@ -1,0 +1,5 @@
+github.com/Tomiyou/go-livecoin v0.0.0-20190626142318-a9511b532822 h1:IJMHU8bsQX+hRWadqgYUBUpgH5ywT/vbFVXC9Vygd40=
+github.com/Tomiyou/go-livecoin v0.0.0-20190626142318-a9511b532822/go.mod h1:UWb4F3oermOG80Esh1ipteRnBmFbUqpZPCnZpetilhk=
+github.com/shopspring/decimal v0.0.0-20180709203117-cd690d0c9e24/go.mod h1:M+9NzErvs504Cn4c5DxATwIqPbtswREoFCre64PpcG4=
+github.com/shopspring/decimal v0.0.0-20200227202807-02e2044944cc h1:jUIKcSPO9MoMJBbEoyE/RJoE8vz7Mb8AjvifMMwSyvY=
+github.com/shopspring/decimal v0.0.0-20200227202807-02e2044944cc/go.mod h1:DKyhrW/HYNuLGql+MJL6WCR6knT2jwCFRcu2hWCYk4o=

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/bitbandi/go-livecoin"
+	"github.com/Tomiyou/go-livecoin"
 )
 
 const (

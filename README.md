@@ -6,7 +6,7 @@ go-livecoin is an implementation of the livecoin API (public and private) in Gol
 This version implement V1.1 livecoin API and the new HMAC authentification.
 
 ## Import
-	import "github.com/bitbandi/go-livecoin"
+	import "github.com/Tomiyou/go-livecoin"
 	
 ## Usage
 
@@ -17,7 +17,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/bitbandi/go-livecoin"
+	"github.com/Tomiyou/go-livecoin"
 )
 
 const (
@@ -44,7 +44,7 @@ import (
 	"fmt"
 	"net/http"
 	"time"
-	"github.com/bitbandi/go-livecoin"
+	"github.com/Tomiyou/go-livecoin"
 )
 
 const (
@@ -66,4 +66,4 @@ func main() {
 }
 ~~~
 
-See ["Examples" folder for more... examples](https://github.com/bitbandi/go-livecoin/blob/master/examples/livecoin.go)
+See ["Examples" folder for more... examples](https://github.com/Tomiyou/go-livecoin/blob/master/examples/livecoin.go)
